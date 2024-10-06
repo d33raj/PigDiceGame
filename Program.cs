@@ -13,13 +13,13 @@
         {
             Random r = new Random();
             int totalScore = 0;
-            bool gameover = false;
+            bool gameover = true;
 
-            while (!gameover)
+            while (gameover)
             {
                 int currentScore = 0;
-                bool currentTurn = false;
-                while (!currentTurn)
+                bool currentTurn = true;
+                while (currentTurn)
                 {
                     totalScore += currentScore;
                     Console.WriteLine($"Your Total score is: {totalScore}");
@@ -35,7 +35,7 @@
                             Console.WriteLine("Starting a New Turn.");
                             Console.WriteLine("*********************************************");
                             totalScore = 0;
-                            currentTurn = true;
+                            currentTurn = false;
                         }
                         else
                         {
@@ -50,9 +50,9 @@
                         if (totalScore >= 20)
                         {
                             Console.WriteLine("Congratulations You have Scored 20 or more points.\nYou Won the Game.");
-                            gameover = true;
+                            gameover = false;
                         }
-                        currentTurn = true;
+                        currentTurn = false;
                     }
                     else
                     {
